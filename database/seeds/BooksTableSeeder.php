@@ -15,6 +15,7 @@ class BooksTableSeeder extends Seeder
         DB::table('books')->insert([
         [
           'book_name' => 'ブック１',
+          'price' => '1000円',
         ],
      ]);
     }
