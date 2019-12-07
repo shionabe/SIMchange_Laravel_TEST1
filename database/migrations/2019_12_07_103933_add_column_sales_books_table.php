@@ -15,9 +15,7 @@ class AddColumnSalesBooksTable extends Migration
     {
         Schema::table('books', function (Blueprint $table) {
             //
-            $table->string('book_name', 255)->comment('本の名前');
-            $table->integer('price')->comment('価格');
-            
+          $table->integer('min_price')->after('sim_name')->comment('最安料金');
         });
     }
 
@@ -30,6 +28,8 @@ class AddColumnSalesBooksTable extends Migration
     {
         Schema::table('books', function (Blueprint $table) {
             //
+             $table->dropColumn('price');
+             $table->dropColumn('book_name');
         });
     }
 }
